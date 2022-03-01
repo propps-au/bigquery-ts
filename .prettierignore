@@ -1,0 +1,14 @@
+packages/frames/src/amplitude/events.ts
+
+packages/graphql-schema/schema.json
+packages/graphql-schema/schema.graphql
+
+**/__generated__
+
+**/node_modules/**
+**/dist/**
+**/build/**
+**/.next/**
+**/html-report/**
+**/coverage/**
+**/storybook-static/**
