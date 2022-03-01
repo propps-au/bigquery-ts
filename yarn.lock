@@ -815,6 +815,13 @@
   resolved "https://registry.npmjs.org/@types/mocha/-/mocha-9.0.0.tgz"
   integrity sha512-scN0hAWyLVAvLR9AyW7HoFF5sJZglyBsbPuHO4fv7JRvfmPBMfp1ozWqOf/e4wwPNxezBZXRfWzMb6iFLgEVRA==
 
+"@types/node-dir@^0.0.34":
+  version "0.0.34"
+  resolved "https://registry.yarnpkg.com/@types/node-dir/-/node-dir-0.0.34.tgz#cc11682a0bbf8770e674eb3f541b3256805ce3d8"
+  integrity sha512-FwNgAbQyXvMP/kTsi/lH7Cpz+2xny+/ZhpDMophHcZerMxYvM+eqa8an1isNbykSQ9VCZutdbmMx2FLp5ufeMw==
+  dependencies:
+    "@types/node" "*"
+
 "@types/node@*", "@types/node@^16.9.4":
   version "16.11.12"
   resolved "https://registry.npmjs.org/@types/node/-/node-16.11.12.tgz"
@@ -3430,6 +3437,13 @@ minimatch@3.0.4, minimatch@^3.0.4:
   dependencies:
     brace-expansion "^1.1.7"
 
+minimatch@^3.0.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.1.2.tgz#19cd194bfd3e428f049a70817c038d89ab4be35b"
+  integrity sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==
+  dependencies:
+    brace-expansion "^1.1.7"
+
 minimatch@^5.0.0:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-5.0.1.tgz#fb9022f7528125187c92bd9e9b6366be1cf3415b"
@@ -3623,6 +3637,13 @@ nock@^13.0.0:
     json-stringify-safe "^5.0.1"
     lodash.set "^4.3.2"
     propagate "^2.0.0"
+
+node-dir@^0.1.17:
+  version "0.1.17"
+  resolved "https://registry.yarnpkg.com/node-dir/-/node-dir-0.1.17.tgz#5f5665d93351335caabef8f1c554516cf5f1e4e5"
+  integrity sha1-X1Zl2TNRM1yqvvjxxVRRbPXx5OU=
+  dependencies:
+    minimatch "^3.0.2"
 
 node-fetch@^2.6.1, node-fetch@^2.6.7:
   version "2.6.7"

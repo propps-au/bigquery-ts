@@ -23,6 +23,7 @@
     "@oclif/plugin-plugins": "^2.0.1",
     "camelcase": "^6.3.0",
     "common-tags": "^1.8.2",
+    "node-dir": "^0.1.17",
     "ramda": "^0.28.0",
     "zod": "^3.12.0",
     "zod-to-ts": "^0.2.2"
@@ -33,6 +34,7 @@
     "@types/common-tags": "^1.8.1",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.9.4",
+    "@types/node-dir": "^0.0.34",
     "@types/ramda": "^0.28.0",
     "chai": "^4",
     "eslint": "^7.32.0",

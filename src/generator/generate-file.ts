@@ -1,6 +1,7 @@
 import camelcase from 'camelcase'
 import { stripIndent } from 'common-tags'
-import { existsSync, mkdirSync, readdirSync, writeFileSync } from 'fs'
+import { existsSync, mkdirSync, writeFileSync } from 'fs'
+import { files } from 'node-dir'
 import * as path from 'path'
 import { parse } from '../parser/parser'
 import { IBigQueryFieldDefinitionSchema } from '../parser/schema'
@@ -8,7 +9,7 @@ import { generate } from './schema-to-ts/build-types'
 import { processNode } from './ts-to-zod'
 
 export function crawlDirectory(dir: string, outputDir: string) {
-  const jsons = readdirSync(dir).filter(
+  const jsons = files(dir, { sync: true }).filter(
     (file) => path.extname(file) === '.json'
   )
 
@@ -19,8 +20,10 @@ export function crawlDirectory(dir: string, outputDir: string) {
   const locations: string[] = []
 
   for (const filename of jsons) {
-    const result = parse(path.join(dir, filename))
-    const name = path.basename(filename, '.json')
+    const result = parse(filename)
+    const relativePath = path.relative(dir, filename)
+    console.log({ filename, relativePath })
+    const name = relativePath.replace(/\.json$/, '').replace(/\//g, '_')
     const location = generateFile(name, outputDir, result)
     locations.push(location)
   }
