@@ -9,43 +9,39 @@ Create Typescript type definitions and Zod schemas based on BigQuery table JSON 
 [![License](https://img.shields.io/npm/l/oclif-hello-world.svg)](https://github.com/propps-au/bigquery-ts/blob/main/package.json)
 
 <!-- toc -->
-
-- [@propps/bigquery-ts](#proppsbigquery-ts)
-- [Usage](#usage)
-- [Commands](#commands)
+* [@propps/bigquery-ts](#proppsbigquery-ts)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g @propps/bigquery-ts
 $ bigquery-ts COMMAND
 running command...
 $ bigquery-ts (--version)
-@propps/bigquery-ts/0.1.0 darwin-arm64 node-v16.13.1
+@propps/bigquery-ts/0.2.0 darwin-arm64 node-v16.13.1
 $ bigquery-ts --help [COMMAND]
 USAGE
   $ bigquery-ts COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`bigquery-ts generate:dir DIRECTORY`](#bigquery-ts-generatedir-directory)
-- [`bigquery-ts generate:file SCHEMA`](#bigquery-ts-generatefile-schema)
-- [`bigquery-ts help [COMMAND]`](#bigquery-ts-help-command)
-- [`bigquery-ts plugins`](#bigquery-ts-plugins)
-- [`bigquery-ts plugins:inspect PLUGIN...`](#bigquery-ts-pluginsinspect-plugin)
-- [`bigquery-ts plugins:install PLUGIN...`](#bigquery-ts-pluginsinstall-plugin)
-- [`bigquery-ts plugins:link PLUGIN`](#bigquery-ts-pluginslink-plugin)
-- [`bigquery-ts plugins:uninstall PLUGIN...`](#bigquery-ts-pluginsuninstall-plugin)
-- [`bigquery-ts plugins:update`](#bigquery-ts-pluginsupdate)
+* [`bigquery-ts generate:dir DIRECTORY`](#bigquery-ts-generatedir-directory)
+* [`bigquery-ts generate:file SCHEMA`](#bigquery-ts-generatefile-schema)
+* [`bigquery-ts help [COMMAND]`](#bigquery-ts-help-command)
+* [`bigquery-ts plugins`](#bigquery-ts-plugins)
+* [`bigquery-ts plugins:inspect PLUGIN...`](#bigquery-ts-pluginsinspect-plugin)
+* [`bigquery-ts plugins:install PLUGIN...`](#bigquery-ts-pluginsinstall-plugin)
+* [`bigquery-ts plugins:link PLUGIN`](#bigquery-ts-pluginslink-plugin)
+* [`bigquery-ts plugins:uninstall PLUGIN...`](#bigquery-ts-pluginsuninstall-plugin)
+* [`bigquery-ts plugins:update`](#bigquery-ts-pluginsupdate)
 
 ## `bigquery-ts generate:dir DIRECTORY`
 
@@ -68,7 +64,7 @@ EXAMPLES
   $ bigquery-ts generate /path/to/schema.json --output /path/to/output/dir
 ```
 
-_See code: [dist/commands/generate/dir.ts](https://github.com/propps-au/bigquery-ts/blob/v0.1.0/dist/commands/generate/dir.ts)_
+_See code: [dist/commands/generate/dir.ts](https://github.com/propps-au/bigquery-ts/blob/v0.2.0/dist/commands/generate/dir.ts)_
 
 ## `bigquery-ts generate:file SCHEMA`
 
@@ -91,7 +87,7 @@ EXAMPLES
   $ bigquery-ts generate /path/to/schema.json --output /path/to/output/dir
 ```
 
-_See code: [dist/commands/generate/file.ts](https://github.com/propps-au/bigquery-ts/blob/v0.1.0/dist/commands/generate/file.ts)_
+_See code: [dist/commands/generate/file.ts](https://github.com/propps-au/bigquery-ts/blob/v0.2.0/dist/commands/generate/file.ts)_
 
 ## `bigquery-ts help [COMMAND]`
 
@@ -188,7 +184,7 @@ ALIASES
   $ bigquery-ts plugins:add
 
 EXAMPLES
-  $ bigquery-ts plugins:install myplugin
+  $ bigquery-ts plugins:install myplugin 
 
   $ bigquery-ts plugins:install https://github.com/someuser/someplugin
 
@@ -268,5 +264,4 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.0.11/src/commands/plugins/update.ts)_
-
 <!-- commandsstop -->
