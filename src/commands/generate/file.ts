@@ -3,8 +3,8 @@ import { basename, dirname } from 'path'
 import { generateFile } from '../../generator/generate-file'
 import { parse } from '../../parser/parser'
 
-export default class Generate extends Command {
-  static description = 'Generate TS files for a BigQuery schema'
+export default class GenerateFile extends Command {
+  static description = 'Generate a single TS file for a BigQuery schema'
 
   static examples = [
     `$ bigquery-ts generate /path/to/schema.json --output /path/to/output/dir
@@ -28,7 +28,7 @@ export default class Generate extends Command {
   ]
 
   async run(): Promise<void> {
-    const { args, flags } = await this.parse(Generate)
+    const { args, flags } = await this.parse(GenerateFile)
     this.log(`Parsing schema ${args.schema}`)
     const result = parse(args.schema)
     const folder = dirname(args.schema)

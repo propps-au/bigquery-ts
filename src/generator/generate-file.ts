@@ -1,10 +1,40 @@
 import camelcase from 'camelcase'
 import { stripIndent } from 'common-tags'
-import { writeFileSync } from 'fs'
+import { existsSync, mkdirSync, readdirSync, writeFileSync } from 'fs'
 import * as path from 'path'
+import { parse } from '../parser/parser'
 import { IBigQueryFieldDefinitionSchema } from '../parser/schema'
 import { generate } from './schema-to-ts/build-types'
 import { processNode } from './ts-to-zod'
+
+export function crawlDirectory(dir: string, outputDir: string) {
+  const jsons = readdirSync(dir).filter(
+    (file) => path.extname(file) === '.json'
+  )
+
+  if (!existsSync(outputDir)) {
+    mkdirSync(outputDir, { recursive: true })
+  }
+
+  const locations: string[] = []
+
+  for (const filename of jsons) {
+    const result = parse(path.join(dir, filename))
+    const name = path.basename(filename, '.json')
+    const location = generateFile(name, outputDir, result)
+    locations.push(location)
+  }
+
+  const index = path.join(outputDir, 'index.ts')
+
+  const content = locations
+    .map((location) => `export * from './${path.basename(location, '.ts')}'`)
+    .join('\n')
+
+  writeFileSync(index, content)
+
+  return [...locations, index]
+}
 
 export function generateFile(
   name: string,
