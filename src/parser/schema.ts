@@ -16,6 +16,7 @@ export interface IBigQueryFieldDefinitionSingle
     | 'STRING'
     | 'BYTES'
     | 'BOOL'
+    | 'BOOLEAN'
     | 'TIMESTAMP'
     | 'DATE'
     | 'TIME'
@@ -63,6 +64,7 @@ const BigQueryFieldDefinitionSingle: z.ZodSchema<IBigQueryFieldDefinitionSingle>
       z.literal('STRING'),
       z.literal('BYTES'),
       z.literal('BOOL'),
+      z.literal('BOOLEAN'),
       z.literal('TIMESTAMP'),
       z.literal('DATE'),
       z.literal('TIME'),

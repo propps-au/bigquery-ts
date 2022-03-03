@@ -50,6 +50,7 @@ function generateField(field: IBigQueryFieldDefinitionSchema): Field {
     case 'STRING':
     case 'BYTES':
     case 'BOOL':
+    case 'BOOLEAN':
     case 'TIMESTAMP':
     case 'DATE':
     case 'TIME':
@@ -99,6 +100,7 @@ function buildSingleFieldType(type: IBigQueryFieldDefinitionSingle['type']) {
     case 'BIGNUMERIC':
       return z.number()
     case 'BOOL':
+    case 'BOOLEAN':
       return z.boolean()
     case 'TIMESTAMP':
       return BigQueryTimestampSchema
