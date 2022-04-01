@@ -25,7 +25,7 @@
     "common-tags": "^1.8.2",
     "node-dir": "^0.1.17",
     "ramda": "^0.28.0",
-    "zod": "^3.12.1",
+    "zod": "^3.14.3",
     "zod-to-ts": "^0.2.2"
   },
   "devDependencies": {
