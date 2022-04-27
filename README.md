@@ -22,7 +22,7 @@ $ npm install -g @propps/bigquery-ts
 $ bigquery-ts COMMAND
 running command...
 $ bigquery-ts (--version)
-@propps/bigquery-ts/0.3.0 darwin-arm64 node-v16.13.1
+@propps/bigquery-ts/0.4.0 darwin-arm64 node-v16.13.1
 $ bigquery-ts --help [COMMAND]
 USAGE
   $ bigquery-ts COMMAND
@@ -64,7 +64,7 @@ EXAMPLES
   $ bigquery-ts generate /path/to/schema.json --output /path/to/output/dir
 ```
 
-_See code: [dist/commands/generate/dir.ts](https://github.com/propps-au/bigquery-ts/blob/v0.3.0/dist/commands/generate/dir.ts)_
+_See code: [dist/commands/generate/dir.ts](https://github.com/propps-au/bigquery-ts/blob/v0.4.0/dist/commands/generate/dir.ts)_
 
 ## `bigquery-ts generate:file SCHEMA`
 
@@ -87,7 +87,7 @@ EXAMPLES
   $ bigquery-ts generate /path/to/schema.json --output /path/to/output/dir
 ```
 
-_See code: [dist/commands/generate/file.ts](https://github.com/propps-au/bigquery-ts/blob/v0.3.0/dist/commands/generate/file.ts)_
+_See code: [dist/commands/generate/file.ts](https://github.com/propps-au/bigquery-ts/blob/v0.4.0/dist/commands/generate/file.ts)_
 
 ## `bigquery-ts help [COMMAND]`
 
