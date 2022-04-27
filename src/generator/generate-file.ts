@@ -22,7 +22,6 @@ export function crawlDirectory(dir: string, outputDir: string) {
   for (const filename of jsons) {
     const result = parse(filename)
     const relativePath = path.relative(dir, filename)
-    console.log({ filename, relativePath })
     const name = relativePath.replace(/\.json$/, '').replace(/\//g, '_')
     const location = generateFile(name, outputDir, result)
     locations.push(location)

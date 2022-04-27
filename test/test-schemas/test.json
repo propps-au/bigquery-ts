@@ -1,0 +1,105 @@
+[
+  {
+    "description": "Event ID",
+    "name": "eventId",
+    "mode": "REQUIRED",
+    "type": "STRING"
+  },
+  {
+    "description": "Event created at",
+    "name": "cat",
+    "mode": "REQUIRED",
+    "type": "TIMESTAMP"
+  },
+  {
+    "description": "Event inserted at",
+    "name": "iat",
+    "mode": "REQUIRED",
+    "type": "TIMESTAMP"
+  },
+  {
+    "description": "User who made the changes",
+    "name": "userId",
+    "mode": "NULLABLE",
+    "type": "STRING"
+  },
+  {
+    "description": "Lite Offer ID",
+    "name": "liteOfferId",
+    "mode": "REQUIRED",
+    "type": "STRING"
+  },
+  {
+    "description": "Action type",
+    "name": "eventName",
+    "mode": "REQUIRED",
+    "type": "STRING"
+  },
+  {
+    "description": "Lite offer object",
+    "name": "liteOffer",
+    "type": "RECORD",
+    "fields": [
+      {
+        "name": "id",
+        "type": "STRING"
+      },
+      {
+        "name": "createdAt",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "offerId",
+        "type": "STRING"
+      },
+      {
+        "name": "buyerId",
+        "type": "STRING"
+      },
+      {
+        "name": "agentId",
+        "type": "STRING"
+      },
+      {
+        "name": "listingId",
+        "type": "STRING"
+      },
+      {
+        "name": "contact",
+        "type": "RECORD",
+        "fields": [
+          {
+            "name": "firstName",
+            "type": "STRING"
+          },
+          {
+            "name": "lastName",
+            "type": "STRING"
+          },
+          {
+            "name": "email",
+            "type": "STRING"
+          },
+          {
+            "name": "phone",
+            "type": "STRING"
+          }
+        ]
+      },
+      {
+        "name": "offer",
+        "type": "RECORD",
+        "fields": [
+          {
+            "name": "amount",
+            "type": "STRING"
+          }
+        ]
+      },
+      {
+        "name": "deleted",
+        "type": "BOOL"
+      }
+    ]
+  }
+]
