@@ -29,6 +29,7 @@
     "zod-to-ts": "^0.2.2"
   },
   "devDependencies": {
+    "np": "^7.6.1",
     "@oclif/test": "^2",
     "@types/chai": "^4",
     "@types/common-tags": "^1.8.1",
