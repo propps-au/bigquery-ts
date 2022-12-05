@@ -5,13 +5,13 @@ import { printNode, zodToTs } from 'zod-to-ts'
 import {
   IBigQueryFieldDefinitionRecord,
   IBigQueryFieldDefinitionSchema,
-  IBigQueryFieldDefinitionSingle
+  IBigQueryFieldDefinitionSingle,
 } from '../../parser/schema'
 import {
   BigQueryDateSchema,
   BigQueryDatetimeSchema,
   BigQueryTimeSchema,
-  BigQueryTimestampSchema
+  BigQueryTimestampSchema,
 } from './bigquery-types'
 
 const addField = (f: Field) => (schema: z.AnyZodObject) => schema.extend(f)
@@ -83,9 +83,9 @@ function applyMode(
 ) {
   switch (mode) {
     case 'NULLABLE':
-      return field.optional().nullable()
+      return field.optional()
     case 'REPEATED':
-      return z.array(field).optional().nullable()
+      return z.array(field).optional()
     default:
       return field
   }
