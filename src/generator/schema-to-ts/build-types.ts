@@ -3,15 +3,15 @@ import ts from 'typescript'
 import { z } from 'zod'
 import { printNode, zodToTs } from 'zod-to-ts'
 import {
-  IBigQueryFieldDefinitionRepeated,
+  IBigQueryFieldDefinitionRecord,
   IBigQueryFieldDefinitionSchema,
-  IBigQueryFieldDefinitionSingle,
+  IBigQueryFieldDefinitionSingle
 } from '../../parser/schema'
 import {
   BigQueryDateSchema,
   BigQueryDatetimeSchema,
   BigQueryTimeSchema,
-  BigQueryTimestampSchema,
+  BigQueryTimestampSchema
 } from './bigquery-types'
 
 const addField = (f: Field) => (schema: z.AnyZodObject) => schema.extend(f)
@@ -56,15 +56,15 @@ function generateField(field: IBigQueryFieldDefinitionSchema): Field {
     case 'TIME':
     case 'DATETIME':
     case 'GEOGRAPHY':
-      return generateSingleField(field)
+      return generateGenericField(field)
     case 'RECORD':
-      return generateRepeatedField(field)
+      return generateRecordField(field)
     default:
       throw new Error(`Unknown type: ${field.type}`)
   }
 }
 
-function generateRepeatedField(field: IBigQueryFieldDefinitionRepeated) {
+function generateRecordField(field: IBigQueryFieldDefinitionRecord) {
   const fields = field.fields.map((f) => generateField(f))
   const obj = z.object({})
   // @ts-ignore
@@ -72,7 +72,7 @@ function generateRepeatedField(field: IBigQueryFieldDefinitionRepeated) {
   return { [field.name]: applyMode(construct(obj), field.mode) }
 }
 
-function generateSingleField(field: IBigQueryFieldDefinitionSingle) {
+function generateGenericField(field: IBigQueryFieldDefinitionSingle) {
   const type = buildSingleFieldType(field.type)
   return { [field.name]: applyMode(type, field.mode) }
 }
@@ -83,9 +83,9 @@ function applyMode(
 ) {
   switch (mode) {
     case 'NULLABLE':
-      return field.optional()
+      return field.optional().nullable()
     case 'REPEATED':
-      return z.array(field)
+      return z.array(field).optional().nullable()
     default:
       return field
   }

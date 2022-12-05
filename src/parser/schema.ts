@@ -25,7 +25,7 @@ export interface IBigQueryFieldDefinitionSingle
     | 'STRUCT'
 }
 
-export interface IBigQueryFieldDefinitionRepeated
+export interface IBigQueryFieldDefinitionRecord
   extends IBigQueryFieldDefinitionBase {
   type: 'RECORD'
   fields: IBigQueryFieldDefinitionSchema[]
@@ -33,7 +33,7 @@ export interface IBigQueryFieldDefinitionRepeated
 
 export type IBigQueryFieldDefinitionSchema =
   | IBigQueryFieldDefinitionSingle
-  | IBigQueryFieldDefinitionRepeated
+  | IBigQueryFieldDefinitionRecord
 
 const BigQueryFieldDefinitionBase = z.object({
   description: z.string().optional(),
@@ -48,13 +48,13 @@ const BigQueryFieldDefinitionBase = z.object({
   name: z.string(),
 })
 
-const BigQueryFieldDefinitionRepeated: z.ZodSchema<IBigQueryFieldDefinitionRepeated> =
+const BigQueryFieldDefinitionRecord: z.ZodSchema<IBigQueryFieldDefinitionRecord> =
   BigQueryFieldDefinitionBase.extend({
     type: z.literal('RECORD'),
     fields: z.array(z.lazy(() => BigQueryFieldDefinitionSchema)),
   })
 
-const BigQueryFieldDefinitionSingle: z.ZodSchema<IBigQueryFieldDefinitionSingle> =
+const BigQueryFieldDefinitionGeneric: z.ZodSchema<IBigQueryFieldDefinitionSingle> =
   BigQueryFieldDefinitionBase.extend({
     type: z.union([
       z.literal('INT64'),
@@ -75,6 +75,6 @@ const BigQueryFieldDefinitionSingle: z.ZodSchema<IBigQueryFieldDefinitionSingle>
   })
 
 export const BigQueryFieldDefinitionSchema: z.ZodSchema<IBigQueryFieldDefinitionSchema> =
-  z.union([BigQueryFieldDefinitionSingle, BigQueryFieldDefinitionRepeated])
+  z.union([BigQueryFieldDefinitionGeneric, BigQueryFieldDefinitionRecord])
 
 export const BigQueryTableSchema = z.array(BigQueryFieldDefinitionSchema)
