@@ -29,7 +29,7 @@
     "zod-to-ts": "^0.2.2"
   },
   "devDependencies": {
-    "@oclif/test": "^2.2.13",
+    "@oclif/test": "^2.3.8",
     "@types/chai": "^4.3.4",
     "@types/common-tags": "^1.8.1",
     "@types/mocha": "^9.1.1",
