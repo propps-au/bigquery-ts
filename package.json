@@ -35,7 +35,7 @@
     "@types/mocha": "^9.1.1",
     "@types/node": "^16.18.4",
     "@types/node-dir": "^0.0.34",
-    "@types/ramda": "^0.28.20",
+    "@types/ramda": "^0.28.23",
     "chai": "^4.3.7",
     "eslint": "^7.32.0",
     "eslint-config-oclif": "^4.0.0",
