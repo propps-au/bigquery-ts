@@ -1,4 +1,4 @@
-import { Command, Flags } from '@oclif/core'
+import { Args, Command, Flags } from '@oclif/core'
 import { basename, dirname } from 'path'
 import { generateFile } from '../../generator/generate-file'
 import { parse } from '../../parser/parser'
@@ -19,13 +19,12 @@ export default class GenerateFile extends Command {
     }),
   }
 
-  static args = [
-    {
-      name: 'schema',
+  static args = {
+    schema: Args.string({
       description: 'BigQuery table schema JSON',
       required: true,
-    },
-  ]
+    }),
+  }
 
   async run(): Promise<void> {
     const { args, flags } = await this.parse(GenerateFile)

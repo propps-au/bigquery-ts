@@ -18,9 +18,9 @@
   ],
   "dependencies": {
     "@google-cloud/bigquery": "^7.3.0",
-    "@oclif/core": "^1.20.4",
-    "@oclif/plugin-help": "^5.1.19",
-    "@oclif/plugin-plugins": "^2.1.7",
+    "@oclif/core": "^3.13.2",
+    "@oclif/plugin-help": "^6.0.7",
+    "@oclif/plugin-plugins": "^4.1.8",
     "camelcase": "^6.3.0",
     "common-tags": "^1.8.2",
     "node-dir": "^0.1.17",
@@ -29,7 +29,7 @@
     "zod-to-ts": "^1.2.0"
   },
   "devDependencies": {
-    "@oclif/test": "^2.2.13",
+    "@oclif/test": "^3.1.3",
     "@types/chai": "^4.3.4",
     "@types/common-tags": "^1.8.1",
     "@types/mocha": "^9.1.1",
@@ -44,7 +44,7 @@
     "globby": "^11.1.0",
     "mocha": "^9.2.2",
     "np": "^7.6.2",
-    "oclif": "^2.7.0",
+    "oclif": "^4.0.4",
     "prettier": "^2.8.0",
     "shx": "^0.3.4",
     "ts-node": "^10.9.1",

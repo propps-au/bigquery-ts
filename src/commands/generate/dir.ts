@@ -1,4 +1,4 @@
-import { Command, Flags } from '@oclif/core'
+import { Args, Command, Flags } from '@oclif/core'
 import { join } from 'path'
 import { crawlDirectory } from '../../generator/generate-file'
 
@@ -19,13 +19,12 @@ export default class GenerateDir extends Command {
     }),
   }
 
-  static args = [
-    {
-      name: 'directory',
+  static args = {
+    directory: Args.string({
       description: 'Directory where the schema files are located',
       required: true,
-    },
-  ]
+    }),
+  }
 
   async run(): Promise<void> {
     const { args, flags } = await this.parse(GenerateDir)
