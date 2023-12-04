@@ -4,7 +4,6 @@ import { generateZodSchemaVariableStatement } from './generate'
 
 export function processNode(node: ts.TypeLiteralNode, label: string): string {
   const alias = f.createTypeAliasDeclaration(
-    undefined,
     [f.createModifier(ts.SyntaxKind.ExportKeyword)],
     label,
     undefined,
